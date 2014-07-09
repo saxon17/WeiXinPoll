@@ -13,7 +13,7 @@ class Product(models.Model):
 	MEID = models.CharField(max_length=120,null=False,blank=True,primary_key=True)
 	DType  = models.CharField(max_length=120,null=False,blank=True)
 	Commu_Method = models.CharField(max_length=120,null=False,blank=True)
-	D_Date = models.CharField(max_length=120,null=False,blank=True)
+	D_Date = models.CharField('date published',max_length=120,null=False,blank=True)
 	Modem_IMEI = models.CharField(max_length=10,null=True,blank=True)
 	SIM_IMSI = models.CharField(max_length=120,null=False,blank=True)
 	SIM_ICC_id = models.CharField(max_length=120,null=True,blank=True)

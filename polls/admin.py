@@ -33,6 +33,11 @@ class PollAAAAAdmin(admin.ModelAdmin):
 #在admin首页中添加Poll管理模块（首页显示）
 #以及管理模块的界面(PollAAAAAdmin)
 #这两个是有联系的所以打包注册
-admin.site.register(Poll,PollAAAAAdmin)
+#admin.site.register(Poll,PollAAAAAdmin)
+
+
+#下面一句与默认管理表对接
+#admin.site.register(Poll)
+
 
 

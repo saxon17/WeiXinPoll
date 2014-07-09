@@ -12,19 +12,11 @@ class ProductAdmin(admin.ModelAdmin):
 			'D_Date','Modem_IMEI','SIM_IMSI','SIM_ICC_id','IP_Address','Firmware_Version',
 			'LLS_Secret','HLS_Secret','Authentication_Key','Encryption_Key')
 		#list_display=('field分组名称','表字段'，'表动作' ）  	
+
+
+
+
 #单记录操作	
-
-
-'''
-#区域集合
-		fieldsets = [
-
-        ('投票主题',               {'fields': ['question']}),
-        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
-    ]
-		inlines =  [ChoiceInline]
-		list_filter = ['pub_date']
-		search_fields = ['question']
-
-'''
+		search_fields = ['MEID','D_Date']
+		list_filter = ['D_Date']
 admin.site.register(Product,ProductAdmin)
