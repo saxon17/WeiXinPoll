@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.contrib import admin
+from django.contrib import admin  #导入总admin
 from polls.models import Poll,Choice
 
 # Register your models here.
@@ -33,7 +33,7 @@ class PollAAAAAdmin(admin.ModelAdmin):
 #在admin首页中添加Poll管理模块（首页显示）
 #以及管理模块的界面(PollAAAAAdmin)
 #这两个是有联系的所以打包注册
-#admin.site.register(Poll,PollAAAAAdmin)
+admin.site.register(Poll,PollAAAAAdmin)
 
 
 #下面一句与默认管理表对接

@@ -1,0 +1,7 @@
+<h1>{{ poll.question }}</h1>
+<ul>
+{% for choice in poll.choice_set.all %} 
+{# Poll是choice的外键，所以系统自动产生choice的集合choice_set #}
+<li>{{ choice.choice_text }}</li> 
+{% endfor %}
+</ul>

@@ -8,21 +8,22 @@ class Poll(models.Model):									#表内容
 	pub_date = models.DateTimeField('date published')   #date published是在admin中
 														#显示的pub_date的别名
 											'''
+				 				 	 		
 
 class Product(models.Model):
-	MEID = models.CharField(max_length=120,null=False,blank=True,primary_key=True)
-	DType  = models.CharField(max_length=120,null=False,blank=True)
-	Commu_Method = models.CharField(max_length=120,null=False,blank=True)
-	D_Date = models.CharField('date published',max_length=120,null=False,blank=True)
-	Modem_IMEI = models.CharField(max_length=10,null=True,blank=True)
-	SIM_IMSI = models.CharField(max_length=120,null=False,blank=True)
-	SIM_ICC_id = models.CharField(max_length=120,null=True,blank=True)
-	IP_Address = models.CharField(max_length=120,null=True,blank=True)
-	Firmware_Version  = models.CharField(max_length=120,null=True,blank=True)
-	LLS_Secret = models.CharField(max_length=120,null=True,blank=True)
-	HLS_Secret = models.CharField(max_length=120,null=True,blank=True)
-	Authentication_Key = models.CharField(max_length=120,null=True,blank=True)
-	Encryption_Key = models.CharField(max_length=120,null=True,blank=True)
+	MEID = models.CharField('Meter equipment identifier',max_length=120,null=False,blank=True,primary_key=True)
+	DType  = models.CharField('Device_type',max_length=120,null=False,blank=True)
+	Commu_Method = models.CharField('Device_type',max_length=120,null=False,blank=True)
+	D_Date = models.CharField('Delivery date',max_length=120,null=False,blank=True,help_text='例:20140721')
+	Modem_IMEI = models.CharField('GPRS modem',max_length=120,null=True,blank=True)
+	SIM_IMSI = models.CharField('SIM IMSI',max_length=120,null=False,blank=True)
+	SIM_ICC_id = models.CharField('SIM ICC_id',max_length=120,null=True,blank=True)
+	IP_Address = models.CharField('IP address',max_length=120,null=True,blank=True)
+	Firmware_Version  = models.CharField('firmware_version',max_length=120,null=True,blank=True)
+	LLS_Secret = models.CharField('LLS_secret',max_length=120,null=True,blank=True)
+	HLS_Secret = models.CharField('HLS_secret',max_length=120,null=True,blank=True)
+	Authentication_Key = models.CharField('Authentication_key',max_length=120,null=True,blank=True)
+	Encryption_Key = models.CharField('Encryption_key',max_length=120,null=True,blank=True)
 	#pub_date = models.DateTimeField('date published')
 
 
