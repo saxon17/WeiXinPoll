@@ -12,11 +12,11 @@ class Poll(models.Model):									#表内容
 
 class Product(models.Model):
 	MEID = models.CharField('Meter equipment identifier',max_length=120,null=False,blank=True,primary_key=True)
-	DType  = models.CharField('Device_type',max_length=120,null=False,blank=True)
-	Commu_Method = models.CharField('Device_type',max_length=120,null=False,blank=True)
-	D_Date = models.CharField('Delivery date',max_length=120,null=False,blank=True,help_text='例:20140721')
+	DType  = models.CharField('Device_type',max_length=120,null=True,blank=True)
+	Commu_Method = models.CharField('Device_type',max_length=120,null=True,blank=True)
+	D_Date = models.CharField('Delivery date',max_length=120,null=True,blank=True,help_text='例:20140721')
 	Modem_IMEI = models.CharField('GPRS modem',max_length=120,null=True,blank=True)
-	SIM_IMSI = models.CharField('SIM IMSI',max_length=120,null=False,blank=True)
+	SIM_IMSI = models.CharField('SIM IMSI',max_length=120,null=True,blank=True)	
 	SIM_ICC_id = models.CharField('SIM ICC_id',max_length=120,null=True,blank=True)
 	IP_Address = models.CharField('IP address',max_length=120,null=True,blank=True)
 	Firmware_Version  = models.CharField('firmware_version',max_length=120,null=True,blank=True)
@@ -26,6 +26,12 @@ class Product(models.Model):
 	Encryption_Key = models.CharField('Encryption_key',max_length=120,null=True,blank=True)
 	#pub_date = models.DateTimeField('date published')
 
+	def save(self, *args, **kwargs):	
+	        if self.SIM_ICC_id == "":
+	            self.SIM_ICC_id = None# Yoko shall never have her own blog!
+	            self.Modem_IMEI = None
+	        # else:
+	            super(Product, self).save(*args, **kwargs)
 
 
 															#Poll动作
@@ -38,3 +44,6 @@ class Product(models.Model):
 #	was_published_recently.boolean = True    #faulse&True  以图表显示
 #	was_published_recently.short_description = 'Published recently?'  #字段别名
 	
+class NullCharField(models.Field):
+    def db_type(self, connection):
+        return 'mytype'
