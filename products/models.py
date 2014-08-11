@@ -6,14 +6,14 @@ from django.db import models
 class Poll(models.Model):									#表内容
 	question = models.CharField(max_length=200)
 	pub_date = models.DateTimeField('date published')   #date published是在admin中
-														#显示的pub_date的别名
+														#显示的别名
 											'''
 				 				 	 		
 
 class Product(models.Model):
 	MEID = models.CharField('Meter equipment identifier',max_length=120,null=False,blank=True,primary_key=True)
 	DType  = models.CharField('Device_type',max_length=120,null=True,blank=True)
-	Commu_Method = models.CharField('Device_type',max_length=120,null=True,blank=True)
+	Commu_Method = models.CharField('Commu_Method',max_length=120,null=True,blank=True)
 	D_Date = models.CharField('Delivery date',max_length=120,null=True,blank=True,help_text='例:20140721')
 	Modem_IMEI = models.CharField('GPRS modem',max_length=120,null=True,blank=True)
 	SIM_IMSI = models.CharField('SIM IMSI',max_length=120,null=True,blank=True)	
@@ -24,6 +24,12 @@ class Product(models.Model):
 	HLS_Secret = models.CharField('HLS_secret',max_length=120,null=True,blank=True)
 	Authentication_Key = models.CharField('Authentication_key',max_length=120,null=True,blank=True)
 	Encryption_Key = models.CharField('Encryption_key',max_length=120,null=True,blank=True)
+	WasionBatch = models.CharField('WasionBatch',max_length=120,null=True,blank=True)
+	NCR = models.CharField('NCR Number',max_length=50,null=True,blank=True)
+	SMSC_Order_No = models.CharField('SMSC_Order_No',max_length=120,null=True,blank=True)
+	Warranty = models.CharField('Warranty To',max_length=120,null=True,blank=True)
+	Remark = models.TextField('Remark',max_length=220,null=True,blank=True)
+	
 	#pub_date = models.DateTimeField('date published')
 
 	def save(self, *args, **kwargs):	

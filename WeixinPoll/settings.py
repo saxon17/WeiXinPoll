@@ -73,11 +73,11 @@ DATABASES = {
     'default': {
         #'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.db.backends.mysql', #添加数据库引擎；选项['postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'].
-        'NAME': 'POllDB', # 数据库文件的路径.
+        'NAME': 'SMSC', # 数据库文件的路径.
         # The following settings are not used with sqlite3:
         # 下面的配置不适用于sqlite3:
         'USER': 'saxon',    # 数据库登陆用户名
-        'PASSWORD': 'cccccc', # 数据库登陆密码
+        'PASSWORD': 'CcTqT29L4fwZ8pCs', # 数据库登陆密码
         'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP. # 主机名
         'PORT': '3306',                      # Set to empty string for default. # 端口号
     }
